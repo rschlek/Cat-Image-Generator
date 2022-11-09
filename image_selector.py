@@ -1,8 +1,14 @@
 from PIL import Image
+import os
+
+dirname = os.path.dirname(__file__)
 
 class image_selector:
     def __init__(self):
         self.cat_q = []
+
+        
+
         self.rainier_q = []
 
     '''
