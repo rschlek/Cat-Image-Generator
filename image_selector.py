@@ -1,6 +1,8 @@
+from PIL import Image
+
 class image_selector:
     def __init__(self):
-        pass
+        self.
 
     '''
     method to get a rainier image
@@ -11,3 +13,5 @@ class image_selector:
     '''
     method to get a cat image
     '''
+    def get_cat_image(self):
+        pass
