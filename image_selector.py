@@ -2,7 +2,8 @@ from PIL import Image
 
 class image_selector:
     def __init__(self):
-        self.
+        self.cat_q = []
+        self.rainier_q = []
 
     '''
     method to get a rainier image
