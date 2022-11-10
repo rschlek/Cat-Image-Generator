@@ -27,8 +27,6 @@ class image_selector:
     method to get a cat image
     '''
     def get_cat_image(self):
-        print(self.cat_q)
         image_path = self.cat_q.pop(0)
         self.cat_q.append(image_path)
-        print(self.cat_q)
         return Image.open(image_path)
