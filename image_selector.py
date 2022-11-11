@@ -1,6 +1,8 @@
 import os
 import random
-from PIL import Image
+
+from PIL import Image, ImageTk
+
 
 def __str_append(str, add):
     str += add
@@ -16,7 +18,6 @@ class image_selector:
 
         # looping through directory and getting all images paths
         for filename in os.listdir(cat_dir):
-            print(type(os.path.join(cat_dir, filename)))
             self.cat_q.append(os.path.join(cat_dir, filename))
         
         # shuffling list so that image order is random
@@ -29,4 +30,6 @@ class image_selector:
     def get_cat_image(self):
         image_path = self.cat_q.pop(0)
         self.cat_q.append(image_path)
-        return Image.open(image_path)
+        image = Image.open(image_path)
+        print(image)
+        return ImageTk.PhotoImage(image)
