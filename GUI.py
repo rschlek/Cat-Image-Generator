@@ -19,10 +19,12 @@ class gui:
         self.cat_button = Button(self.root, text="New Cat Picture", command=self.new_picture).pack(side=BOTTOM)
         
         self.root.mainloop()
-        
+       
+    '''
+    
+    ''' 
     def new_picture(self):
-        image = self.selector.get_cat_image()
-        self.image_label.config(image=image)
+        return 
 
         
 
