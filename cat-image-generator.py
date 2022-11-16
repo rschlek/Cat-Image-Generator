@@ -34,6 +34,14 @@ class image_selector:
         return image_path
 
     '''
+    mehtod to get last image
+    '''
+    def go_back_image(self):
+        image_path = self.cat_q.pop(len(self.cat_q)-1)
+        self.cat_q.insert(image_path)
+        return image_path
+
+    '''
     Method to return the next image's dimensions
     width,height
     '''
@@ -64,9 +72,13 @@ class gui:
         self.image_label = Label(self.root, image=first_image)
         self.image_label.pack(side=TOP)
         
-        # Cat Picture Button
+        # Last cat picture button
+        self.old_cat_button = Button(self.root, text="Last Cat Picture", command=self.__prev_picture).pack(side=BOTTOM)
+
+        # New cat Picture Button
         self.cat_button = Button(self.root, text="New Cat Picture", command=self.__new_picture).pack(side=BOTTOM)
-        
+
+
         # mainloop
         self.root.mainloop()
 
@@ -78,6 +90,16 @@ class gui:
         self.image_label["image"] = new_image
         self.image_label.image=new_image
 
+
+    '''
+    Method to go back an image
+    '''
+    def __prev_picture(self):
+        new_image = ImageTk.PhotoImage(Image.open(self.selector.go_back_image()))
+        self.image_label["image"] = new_image
+        self.image_label.image=new_image
+    
+    
     '''
     Method to get current window dimensions, next image dimensions, 
     '''
